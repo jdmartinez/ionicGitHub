@@ -23,7 +23,6 @@ export class Users {
 
   constructor(public navCtrl: NavController, private githubUsers: GithubUsers) {
     githubUsers.load().subscribe(users => {
-      console.log(users);
       this.users = users;
       this.cachedUsers = users;
     })
