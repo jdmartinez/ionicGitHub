@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Config, Platform } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
@@ -9,9 +9,11 @@ import { TabsPage } from '../pages/tabs/tabs';
   template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
+  currentPlatform: string = 'windows'
+
   rootPage = TabsPage;
 
-  constructor(platform: Platform) {
+  constructor(platform: Platform, config: Config) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
